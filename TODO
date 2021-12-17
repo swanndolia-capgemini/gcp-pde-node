@@ -2,3 +2,6 @@ different color for answer even/odd rows
 better design
 search bar / tickable filters
 complete questions.json (more questions; add explanation; add keywords and theme) 
+add courses / learning page
+create exam mock (50 random question with scoring + insights)
+create login with data link to big query for analysis

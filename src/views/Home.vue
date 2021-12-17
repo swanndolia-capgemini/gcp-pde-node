@@ -1,44 +1,42 @@
 <template>
   <div class="home">
-    <ul class="question-box" v-for="question in questions" :key="question">
-      <li v-for="name in question" :key="name">
-        <span class="question-id">{{ Object.keys(question)[0] }}</span>
-        <Question :question="name" />
-      </li>
-      <br />
-    </ul>
+    <span @click="sendToPage('questions')"
+      ><h2>Accèder à la liste de questions</h2></span
+    >
+    <span @click="sendToPage('ressources')"
+      ><h2>Accèder aux ressources</h2></span
+    >
+    <span @click="sendToPage('simulation')"
+      ><h2>Accèder à la simulation d'examen</h2></span
+    >
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import Question from "@/components/Question.vue";
-import questionList from "../questions.json";
-
 export default {
   name: "Home",
   data() {
-    return {
-      questions: questionList,
-    };
+    return {};
   },
-  components: {
-    Question,
+  components: {},
+  methods: {
+    sendToPage(page) {
+      this.$router.push({ path: page });
+    },
   },
 };
 </script>
-<style lang="scss" scoped="true">
-.question-box {
+
+<style scoped lang="scss">
+span {
   background: lightgray;
+  cursor: pointer;
+  padding: 20px;
   border-radius: 20px;
-  padding:  10px 30px;
 }
-.question-id{
-  color: darkred;
-}
-li{
+.home {
   display: flex;
-  flex-direction: column;
-  gap: 10px
+  flex-direction: row;
+  justify-content: space-between;
 }
 </style>
