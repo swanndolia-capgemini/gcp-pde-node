@@ -814,16 +814,16 @@
         }
     },
     {
-        "question-2": {
-            "question": "",
+        "question-39": {
+            "question": "Your company is loading comma-separated values (CSV) files into Google BigQuery. The data is fully imported successfully; however, the imported data is not matching byte-to-byte to the source file. What is the most likely cause of this problem?",
             "answers": [
-                "",
-                "",
-                "",
-                ""
+                "The CSV data loaded in BigQuery is not flagged as CSV.",
+                "The CSV data has invalid rows that were skipped on import.",
+                "The CSV data loaded in BigQuery is not using BigQuery's default encoding.",
+                "The CSV data has not gone through an ETL phase before loading into BigQuery."
             ],
             "correct": [
-                ""
+                "The CSV data loaded in BigQuery is not using BigQuery's default encoding."
             ],
             "theme": "",
             "keywords": [
@@ -835,16 +835,18 @@
         }
     },
     {
-        "question-2": {
-            "question": "",
+        "question-40": {
+            "question": "Your company produces 20,000 files every hour. Each data file is formatted as a comma separated values (CSV) file that is less than 4 KB. All files must be ingested on Google Cloud Platform before they can be processed. Your company site has a 200 ms latency to Google Cloud, and your Internet connection bandwidth is limited as 50 Mbps. You currently deploy a secure FTP (SFTP) server on a virtual machine in Google Compute Engine as the data ingestion point. A local SFTP client runs on a dedicated machine to transmit the CSV files as is. The goal is to make reports with data from the previous day available to the executives by 10:00 a.m. each day. This design is barely able to keep up with the current volume, even though the bandwidth utilization is rather low.\nYou are told that due to seasonality, your company expects the number of files to double for the next three months. Which two actions should you take? (Choose two.)",
             "answers": [
-                "",
-                "",
-                "",
-                ""
+                "Introduce data compression for each file to increase the rate file of file transfer.",
+                "Contact your internet service provider (ISP) to increase your maximum bandwidth to at least 100 Mbps.",
+                "Redesign the data ingestion process to use gsutil tool to send the CSV files to a storage bucket in parallel.",
+                "Assemble 1,000 files into a tape archive (TAR) file. Transmit the TAR files instead, and disassemble the CSV files in the cloud upon receiving them.",
+                "Create an S3-compatible storage endpoint in your network, and use Google Cloud Storage Transfer Service to transfer on-premises data to the designated storage bucket."
             ],
             "correct": [
-                ""
+                "Introduce data compression for each file to increase the rate file of file transfer.",
+                "Redesign the data ingestion process to use gsutil tool to send the CSV files to a storage bucket in parallel."
             ],
             "theme": "",
             "keywords": [
@@ -856,16 +858,18 @@
         }
     },
     {
-        "question-2": {
-            "question": "",
+        "question-41": {
+            "question": "You are choosing a NoSQL database to handle telemetry data submitted from millions of Internet-of-Things (IoT) devices. The volume of data is growing at 100TB per year, and each data entry has about 100 attributes. The data processing pipeline does not require atomicity, consistency, isolation, and durability (ACID).\nHowever, high availability and low latency are required.\nYou need to analyze the data by querying against individual fields. Which three databases meet your requirements? (Choose three.)",
             "answers": [
-                "",
-                "",
-                "",
-                ""
+                "Redis",
+                "HBase",
+                "MySQL",
+                "MongoDB",
+                "Cassandra",
+                "HDFS with Hive"
             ],
             "correct": [
-                ""
+                "HBase", "MongoDB", "Cassandra"
             ],
             "theme": "",
             "keywords": [
