@@ -39,7 +39,7 @@ export default {
       return array.sort(() => (Math.random() > 0.5 ? 1 : -1));
     },
     checkAnswer(correct) {
-      for (let element in this.checkedAnswer) {
+      if(this.checkedAnswer.length == correct.length){      for (let element in this.checkedAnswer) {
         if (!correct.includes(this.checkedAnswer[element])) {
           document.getElementById(this.checkedAnswer[element]).style.color =
             "red";
@@ -53,7 +53,10 @@ export default {
           document.getElementById(correct[element]).style.color = "green";
         }
       }
-      this.hideExplain = false;
+      this.hideExplain = false;}
+      else{
+        alert("Vous de vez sélectionner " + correct.length + " réponses")
+      }
     },
   },
   props: {

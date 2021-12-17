@@ -869,7 +869,9 @@
                 "HDFS with Hive"
             ],
             "correct": [
-                "HBase", "MongoDB", "Cassandra"
+                "HBase",
+                "MongoDB",
+                "Cassandra"
             ],
             "theme": "",
             "keywords": [
@@ -887,12 +889,14 @@
                 "Get more training examples",
                 "Reduce the number of training examples",
                 "Use a smaller set of features",
-                "Use a larger set of features", 
-                "Increase the regularization parameters", 
+                "Use a larger set of features",
+                "Increase the regularization parameters",
                 "Decrease the regularization parameters"
             ],
             "correct": [
-                "Get more training examples", "Use a smaller set of features", "Increase the regularization parameters"
+                "Get more training examples",
+                "Use a smaller set of features",
+                "Increase the regularization parameters"
             ],
             "theme": "",
             "keywords": [
@@ -904,16 +908,16 @@
         }
     },
     {
-        "question-3": {
-            "question": "",
+        "question-43": {
+            "question": "You are implementing security best practices on your data pipeline. Currently, you are manually executing jobs as the Project Owner. You want to automate these jobs by taking nightly batch files containing non-public information from Google Cloud Storage, processing them with a Spark Scala job on a Google Cloud Dataproc cluster, and depositing the results into Google BigQuery.\nHow should you securely run this workload?",
             "answers": [
-                "",
-                "",
-                "",
-                ""
+                "Restrict the Google Cloud Storage bucket so only you can see the files",
+                "Grant the Project Owner role to a service account, and run the job with it",
+                "Use a service account with the ability to read the batch files and to write to BigQuery",
+                "Use a user account with the Project Viewer role on the Cloud Dataproc cluster to read the batch files and write to BigQuery"
             ],
             "correct": [
-                ""
+                "Use a service account with the ability to read the batch files and to write to BigQuery"
             ],
             "theme": "",
             "keywords": [
@@ -925,16 +929,16 @@
         }
     },
     {
-        "question-2": {
-            "question": "",
+        "question-44": {
+            "question": "Your globally distributed auction application allows users to bid on items. Occasionally, users place identical bids at nearly identical times, and different application servers process those bids. Each bid event contains the item, amount, user, and timestamp. You want to collate those bid events into a single location in real time to determine which user bid first. What should you do?",
             "answers": [
-                "",
-                "",
-                "",
-                ""
+                "Create a file on a shared file and have the application servers write all bid events to that file. Process the file with Apache Hadoop to identify which user bid first.",
+                "Have each application server write the bid events to Cloud Pub/Sub as they occur. Push the events from Cloud Pub/Sub to a custom endpoint that writes the bid event information into Cloud SQL.",
+                "Set up a MySQL database for each application server to write bid events into. Periodically query each of those distributed MySQL databases and update a master MySQL database with bid event information.",
+                "Have each application server write the bid events to Google Cloud Pub/Sub as they occur. Use a pull subscription to pull the bid events using Google Cloud Dataflow. Give the bid for each item to the user in the bid event that is processed first."
             ],
             "correct": [
-                ""
+                "Have each application server write the bid events to Cloud Pub/Sub as they occur. Push the events from Cloud Pub/Sub to a custom endpoint that writes the bid event information into Cloud SQL."
             ],
             "theme": "",
             "keywords": [
@@ -946,16 +950,18 @@
         }
     },
     {
-        "question-2": {
-            "question": "",
+        "question-45": {
+            "question": "Your organization has been collecting and analyzing data in Google BigQuery for 6 months. The majority of the data analyzed is placed in a time-partitioned table named events_partitioned. To reduce the cost of queries, your organization created a view called events, which queries only the last 14 days of data. The view is described in legacy SQL. Next month, existing applications will be connecting to BigQuery to read the events data via an ODBC connection. You need to ensure the applications can connect. Which two actions should you take? (Choose two.)",
             "answers": [
-                "",
-                "",
-                "",
-                ""
+                "Create a new view over events using standard SQL",
+                "Create a new partitioned table using a standard SQL query",
+                "Create a new view over events_partitioned using standard SQL",
+                "Create a service account for the ODBC connection to use for authentication",
+                "Create a Google Cloud Identity and Access Management (Cloud IAM) role for the ODBC connection and shared \"events\""
             ],
             "correct": [
-                ""
+                "Create a new view over events_partitioned using standard SQL",
+                "Create a service account for the ODBC connection to use for authentication"
             ],
             "theme": "",
             "keywords": [
@@ -967,16 +973,16 @@
         }
     },
     {
-        "question-2": {
-            "question": "",
+        "question-46": {
+            "question": "You have enabled the free integration between Firebase Analytics and Google BigQuery. Firebase now automatically creates a new table daily in BigQuery in the format app_events_YYYYMMDD. You want to query all of the tables for the past 30 days in legacy SQL. What should you do?",
             "answers": [
-                "",
-                "",
-                "",
-                ""
+                "Use the TABLE_DATE_RANGE function",
+                "Use the WHERE_PARTITIONTIME pseudo column",
+                "Use WHERE date BETWEEN YYYY-MM-DD AND YYYY-MM-DD",
+                "Use SELECT IF.(date >= YYYY-MM-DD AND date <= YYYY-MM-DD"
             ],
             "correct": [
-                ""
+                "Use the TABLE_DATE_RANGE function"
             ],
             "theme": "",
             "keywords": [
@@ -988,16 +994,16 @@
         }
     },
     {
-        "question-2": {
-            "question": "",
+        "question-47": {
+            "question": "Your company is currently setting up data pipelines for their campaign. For all the Google Cloud Pub/Sub streaming data, one of the important business requirements is to be able to periodically identify the inputs and their timings during their campaign. Engineers have decided to use windowing and transformation in Google Cloud Dataflow for this purpose. However, when testing this feature, they find that the Cloud Dataflow job fails for the all streaming insert. What is the most likely cause of this problem?",
             "answers": [
-                "",
-                "",
-                "",
-                ""
+                "They have not assigned the timestamp, which causes the job to fail",
+                "They have not set the triggers to accommodate the data coming in late, which causes the job to fail",
+                "They have not applied a global windowing function, which causes the job to fail when the pipeline is created",
+                "They have not applied a non-global windowing function, which causes the job to fail when the pipeline is created"
             ],
             "correct": [
-                ""
+                "They have not applied a non-global windowing function, which causes the job to fail when the pipeline is created"
             ],
             "theme": "",
             "keywords": [
@@ -1009,16 +1015,16 @@
         }
     },
     {
-        "question-2": {
-            "question": "",
+        "question-48": {
+            "question": "You architect a system to analyze seismic data. Your extract, transform, and load (ETL) process runs as a series of MapReduce jobs on an Apache Hadoop cluster. The ETL process takes days to process a data set because some steps are computationally expensive. Then you discover that a sensor calibration step has been omitted. How should you change your ETL process to carry out sensor calibration systematically in the future?",
             "answers": [
-                "",
-                "",
-                "",
-                ""
+                "Modify the transformMapReduce jobs to apply sensor calibration before they do anything else.",
+                "Introduce a new MapReduce job to apply sensor calibration to raw data, and ensure all other MapReduce jobs are chained after this.",
+                "Add sensor calibration data to the output of the ETL process, and document that all users need to apply sensor calibration themselves.",
+                "Develop an algorithm through simulation to predict variance of data output from the last MapReduce job based on calibration factors, and apply the correction to all data."
             ],
             "correct": [
-                ""
+                "Introduce a new MapReduce job to apply sensor calibration to raw data, and ensure all other MapReduce jobs are chained after this."
             ],
             "theme": "",
             "keywords": [
@@ -1030,16 +1036,16 @@
         }
     },
     {
-        "question-2": {
-            "question": "",
+        "question-49": {
+            "question": "An online retailer has built their current application on Google App Engine. A new initiative at the company mandates that they extend their application to allow their customers to transact directly via the application. They need to manage their shopping transactions and analyze combined data from multiple datasets using a business intelligence (BI) tool. They want to use only a single database for this purpose. Which Google Cloud database should they choose?",
             "answers": [
-                "",
-                "",
-                "",
-                ""
+                "BigQuery",
+                "Cloud SQL",
+                "Cloud BigTable",
+                "Cloud Datastore"
             ],
             "correct": [
-                ""
+                "Cloud SQL"
             ],
             "theme": "",
             "keywords": [
@@ -1051,16 +1057,16 @@
         }
     },
     {
-        "question-2": {
-            "question": "",
+        "question-50": {
+            "question": "You launched a new gaming app almost three years ago. You have been uploading log files from the previous day to a separate Google BigQuery table with the table name format LOGS_yyyymmdd. You have been using table wildcard functions to generate daily and monthly reports for all time ranges. Recently, you discovered that some queries that cover long date ranges are exceeding the limit of 1,000 tables and failing. How can you resolve this issue?",
             "answers": [
-                "",
-                "",
-                "",
-                ""
+                "Convert all daily log tables into date-partitioned tables",
+                "Convert the sharded tables into a single partitioned table",
+                "Enable query caching so you can cache data from previous months",
+                "Create separate views to cover each month, and query from these views"
             ],
             "correct": [
-                ""
+                "Convert the sharded tables into a single partitioned table"
             ],
             "theme": "",
             "keywords": [
