@@ -12,6 +12,7 @@
       >
       <br />
     </span>
+    <p v-if="!hideExplain">Explanation: {{question.explanation}}</p>
     <button @click="checkAnswer(question.correct)">Valider</button>
   </div>
 </template>
@@ -21,16 +22,18 @@ export default {
   data() {
     return {
       checkedAnswer: [],
+      hideExplain: true,
     };
   },
   methods: {
     checkAnswer(correct) {
       for (let element in this.checkedAnswer) {
         if (!correct.includes(this.checkedAnswer[element])) {
-          document.getElementById(this.checkedAnswer[element]).style.color = "red";
-        }
-        else{
-          document.getElementById(this.checkedAnswer[element]).style.color = "green";
+          document.getElementById(this.checkedAnswer[element]).style.color =
+            "red";
+        } else {
+          document.getElementById(this.checkedAnswer[element]).style.color =
+            "green";
         }
       }
       for (let element in correct) {
@@ -38,6 +41,7 @@ export default {
           document.getElementById(correct[element]).style.color = "green";
         }
       }
+      this.hideExplain = false;
     },
   },
   props: {

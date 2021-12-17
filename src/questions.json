@@ -269,7 +269,7 @@
                 "Cloud Datastore"
             ],
             "correct": [
-                "Cloud Bigtable"
+                "Cloud Datastore"
             ],
             "theme": "",
             "keywords": [
@@ -709,16 +709,16 @@
         }
     },
     {
-        "question-2": {
-            "question": "",
+        "question-34": {
+            "question": "Your company has recently grown rapidly and now ingesting data at a significantly higher rate than it was previously. You manage the daily batch MapReduce analytics jobs in Apache Hadoop. However, the recent increase in data has meant the batch jobs are falling behind. You were asked to recommend ways the development team could increase the responsiveness of the analytics without increasing costs. What should you recommend they do?",
             "answers": [
-                "",
-                "",
-                "",
-                ""
+                "Rewrite the job in Pig.",
+                "Rewrite the job in Apache Spark.",
+                "Increase the size of the Hadoop cluster.",
+                "Decrease the size of the Hadoop cluster but also rewrite the job in Hive"
             ],
             "correct": [
-                ""
+                "Rewrite the job in Apache Spark."
             ],
             "theme": "",
             "keywords": [
@@ -730,16 +730,16 @@
         }
     },
     {
-        "question-2": {
-            "question": "",
+        "question-35": {
+            "question": "You work for a large fast food restaurant chain with over 400,000 employees. You store employee information in Google BigQuery in a Users table consisting of a FirstName field and a LastName field. A member of IT is building an application and asks you to modify the schema and data in BigQuery so the application can query a FullName field consisting of the value of the FirstName field concatenated with a space, followed by the value of the LastName field for each employee. How can you make that data available while minimizing cost?",
             "answers": [
-                "",
-                "",
-                "",
-                ""
+                "Create a view in BigQuery that concatenates the FirstName and LastName field values to produce the FullName.",
+                "Add a new column called FullName to the Users table. Run an UPDATE statement that updates the FullName column for each user with the concatenation of the FirstName and LastName values.",
+                "Create a Google Cloud Dataflow job that queries BigQuery for the entire Users table, concatenates the FirstName value and LastName value for each user, and loads the proper values for FirstName, LastName, and FullName into a new table in BigQuery.",
+                "Use BigQuery to export the data for the table to a CSV file. Create a Google Cloud Dataproc job to process the CSV file and output a new CSV file containing the proper values for FirstName, LastName and FullName. Run a BigQuery load job to load the new CSV file into BigQuery."
             ],
             "correct": [
-                ""
+                "Add a new column called FullName to the Users table. Run an UPDATE statement that updates the FullName column for each user with the concatenation of the FirstName and LastName values."
             ],
             "theme": "",
             "keywords": [
@@ -751,16 +751,16 @@
         }
     },
     {
-        "question-2": {
-            "question": "",
+        "question-36": {
+            "question": "You work for a manufacturing plant that batches application log files together into a single log file once a day at 2:00 AM. You have written a Google Cloud Dataflow job to process that log file. You need to make sure the log file in processed once per day as inexpensively as possible. What should you do?",
             "answers": [
-                "",
-                "",
-                "",
-                ""
+                "Change the processing job to use Google Cloud Dataproc instead.",
+                "Manually start the Cloud Dataflow job each morning when you get into the office.",
+                "Create a cron job with Google App Engine Cron Service to run the Cloud Dataflow job.",
+                "Configure the Cloud Dataflow job as a streaming job so that it processes the log data immediately."
             ],
             "correct": [
-                ""
+                "Create a cron job with Google App Engine Cron Service to run the Cloud Dataflow job."
             ],
             "theme": "",
             "keywords": [
@@ -772,16 +772,16 @@
         }
     },
     {
-        "question-2": {
-            "question": "",
+        "question-37": {
+            "question": "You work for an economic consulting firm that helps companies identify economic trends as they happen. As part of your analysis, you use Google BigQuery to correlate customer data with the average prices of the 100 most common goods sold, including bread, gasoline, milk, and others. The average prices of these goods are updated every 30 minutes. You want to make sure this data stays up to date so you can combine it with other data in BigQuery as cheaply as possible.\nWhat should you do?",
             "answers": [
-                "",
-                "",
-                "",
-                ""
+                "Load the data every 30 minutes into a new partitioned table in BigQuery.",
+                "Store and update the data in a regional Google Cloud Storage bucket and create a federated data source in BigQuery",
+                "Store the data in Google Cloud Datastore. Use Google Cloud Dataflow to query BigQuery and combine the data programmatically with the data stored in Cloud Datastore",
+                "Store the data in a file in a regional Google Cloud Storage bucket. Use Cloud Dataflow to query BigQuery and combine the data programmatically with the data stored in Google Cloud Storage."
             ],
             "correct": [
-                ""
+                "Store and update the data in a regional Google Cloud Storage bucket and create a federated data source in BigQuery"
             ],
             "theme": "",
             "keywords": [
@@ -793,16 +793,16 @@
         }
     },
     {
-        "question-2": {
-            "question": "",
+        "question-38": {
+            "question": "You are designing the database schema for a machine learning-based food ordering service that will predict what users want to eat. Here is some of the information you need to store:\n✑ The user profile: What the user likes and doesn't like to eat\n✑ The user account information: Name, address, preferred meal times\n✑ The order information: When orders are made, from where, to whom\nThe database will be used to store all the transactional data of the product. You want to optimize the data schema. Which Google Cloud Platform product should you use?",
             "answers": [
-                "",
-                "",
-                "",
-                ""
+                "BigQuery",
+                "Cloud SQL",
+                "Cloud Bigtable",
+                "Cloud Datastore"
             ],
             "correct": [
-                ""
+                "BigQuery"
             ],
             "theme": "",
             "keywords": [

@@ -12,6 +12,11 @@
   text-align: left;
   color: #2c3e50;
   font-size: 20px;
+  background: darkgray;
+}
+body {
+  margin: 0;
+  padding: 0;
 }
 
 #nav {

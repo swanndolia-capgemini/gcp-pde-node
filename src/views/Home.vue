@@ -2,6 +2,7 @@
   <div class="home">
     <ul class="question-box" v-for="question in questions" :key="question">
       <li v-for="name in question" :key="name">
+        <span class="question-id">{{ Object.keys(question) }}</span>
         <Question :question="name" />
       </li>
       <br />
@@ -32,5 +33,8 @@ export default {
   border-radius: 20px;
   margin: 15px;
   padding: 30px;
+}
+.question-id{
+  color: darkred;
 }
 </style>
