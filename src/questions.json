@@ -444,7 +444,7 @@
                 "Maintain a database table to store the hash value and other metadata for each data entry."
             ],
             "correct": [
-                "Assign global unique identifiers (GUID) to each data entry.c"
+                "Assign global unique identifiers (GUID) to each data entry."
             ],
             "theme": "",
             "keywords": [
@@ -584,7 +584,7 @@
     },
     {
         "question-28": {
-            "question": "Your company is performing data preprocessing for a learning algorithm in Google Cloud Dataflow. Numerous data logs are being are being generated during this step, and the team wants to analyze them. Due to the dynamic nature of the campaign, the data is growing exponentially every hour.\nThe data scientists have written the following code to read the data for a new key features in the logs.\n\nBigQueryIO.Read -\n.named('ReadLogData')\n.from('clouddataflow-readonly:samples.log_data')\nYou want to improve the performance of this data read. What should you do?",
+            "question": "Your company is performing data preprocessing for a learning algorithm in Google Cloud Dataflow. Numerous data logs are being generated during this step, and the team wants to analyze them. Due to the dynamic nature of the campaign, the data is growing exponentially every hour.\nThe data scientists have written the following code to read the data for a new key features in the logs.\n\nBigQueryIO.Read -\n.named('ReadLogData')\n.from('clouddataflow-readonly:samples.log_data')\nYou want to improve the performance of this data read. What should you do?",
             "answers": [
                 "Specify the TableReference object in the code.",
                 "Use .fromQuery operation to read specific fields from the table.",
@@ -1078,7 +1078,322 @@
         }
     },
     {
-        "question-2": {
+        "question-51": {
+            "question": "Your analytics team wants to build a simple statistical model to determine which customers are most likely to work with your company again, based on a few different metrics. They want to run the model on Apache Spark, using data housed in Google Cloud Storage, and you have recommended using Google Cloud Dataproc to execute this job. Testing has shown that this workload can run in approximately 30 minutes on a 15-node cluster, outputting the results into Google BigQuery. The plan is to run this workload weekly. How should you optimize the cluster for cost?",
+            "answers": [
+                "Migrate the workload to Google Cloud Dataflow",
+                "Use pre-emptible virtual machines (VMs) for the cluster",
+                "Use a higher-memory node so that the job runs faster",
+                "Use SSDs on the worker nodes so that the job can run faster"
+            ],
+            "correct": [
+                "Use pre-emptible virtual machines (VMs) for the cluster"
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-52": {
+            "question": "Your company receives both batch- and stream-based event data. You want to process the data using Google Cloud Dataflow over a predictable time period.\nHowever, you realize that in some instances data can arrive late or out of order. How should you design your Cloud Dataflow pipeline to handle data that is late or out of order?",
+            "answers": [
+                "Set a single global window to capture all the data.",
+                "Set sliding windows to capture all the lagged data.",
+                "Use watermarks and timestamps to capture the lagged data.",
+                "Ensure every datasource type (stream or batch) has a timestamp, and use the timestamps to define the logic for lagged data"
+            ],
+            "correct": [
+                "Use watermarks and timestamps to capture the lagged data."
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-53": {
+            "question": "You are integrating one of your internal IT applications and Google BigQuery, so users can query BigQuery from the application's interface. You do not want individual users to authenticate to BigQuery and you do not want to give them access to the dataset. You need to securely access BigQuery from your IT application. What should you do?",
+            "answers": [
+                "Create groups for your users and give those groups access to the dataset",
+                "Integrate with a single sign-on (SSO) platform, and pass each user's credentials along with the query request",
+                "Create a service account and grant dataset access to that account. Use the service account's private key to access the dataset",
+                "Create a dummy user and grant dataset access to that user. Store the username and password for that user in a file on the files system, and use those credentials to access the BigQuery dataset"
+            ],
+            "correct": [
+                "Create a service account and grant dataset access to that account. Use the service account's private key to access the dataset"
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-54": {
+            "question": "You are building a data pipeline on Google Cloud. You need to prepare data using a casual method for a machine-learning process. You want to support a logistic regression model. You also need to monitor and adjust for null values, which must remain real-valued and cannot be removed. What should you do?",
+            "answers": [
+                "Use Cloud Dataprep to find null values in sample source data. Convert all nulls to 'none' using a Cloud Dataproc job.",
+                "Use Cloud Dataprep to find null values in sample source data. Convert all nulls to 0 using a Cloud Dataprep job.",
+                "Use Cloud Dataflow to find null values in sample source data. Convert all nulls to 'none' using a Cloud Dataprep job.",
+                "Use Cloud Dataflow to find null values in sample source data. Convert all nulls to 0 using a custom script."
+            ],
+            "correct": [
+                "Use Cloud Dataprep to find null values in sample source data. Convert all nulls to 0 using a Cloud Dataprep job."
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-55": {
+            "question": "You set up a streaming data insert into a Redis cluster via a Kafka cluster. Both clusters are running on Compute Engine instances. You need to encrypt data at rest with encryption keys that you can create, rotate, and destroy as needed. What should you do?",
+            "answers": [
+                "Create a dedicated service account, and use encryption at rest to reference your data stored in your Compute Engine cluster instances as part of your API service calls.",
+                "Create encryption keys in Cloud Key Management Service. Use those keys to encrypt your data in all of the Compute Engine cluster instances.",
+                "Create encryption keys locally. Upload your encryption keys to Cloud Key Management Service. Use those keys to encrypt your data in all of the Compute Engine cluster instances.",
+                "Create encryption keys in Cloud Key Management Service. Reference those keys in your API service calls when accessing the data in your Compute Engine cluster instances."
+            ],
+            "correct": [
+                "Create encryption keys in Cloud Key Management Service. Use those keys to encrypt your data in all of the Compute Engine cluster instances."
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-56": {
+            "question": "You are developing an application that uses a recommendation engine on Google Cloud. Your solution should display new videos to customers based on past views. Your solution needs to generate labels for the entities in videos that the customer has viewed. Your design must be able to provide very fast filtering suggestions based on data from other customer preferences on several TB of data. What should you do?",
+            "answers": [
+                "Build and train a complex classification model with Spark MLlib to generate labels and filter the results. Deploy the models using Cloud Dataproc. Call the model from your application.",
+                "Build and train a classification model with Spark MLlib to generate labels. Build and train a second classification model with Spark MLlib to filter results to match customer preferences. Deploy the models using Cloud Dataproc. Call the models from your application.",
+                "Build an application that calls the Cloud Video Intelligence API to generate labels. Store data in Cloud Bigtable, and filter the predicted labels to match the user's viewing history to generate preferences.",
+                "Build an application that calls the Cloud Video Intelligence API to generate labels. Store data in Cloud SQL, and join and filter the predicted labels to match the user's viewing history to generate preferences."
+            ],
+            "correct": [
+                "Build an application that calls the Cloud Video Intelligence API to generate labels. Store data in Cloud Bigtable, and filter the predicted labels to match the user's viewing history to generate preferences."
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-57": {
+            "question": "You are selecting services to write and transform JSON messages from Cloud Pub/Sub to BigQuery for a data pipeline on Google Cloud. You want to minimize service costs. You also want to monitor and accommodate input data volume that will vary in size with minimal manual intervention. What should you do?",
+            "answers": [
+                "Use Cloud Dataproc to run your transformations. Monitor CPU utilization for the cluster. Resize the number of worker nodes in your cluster via the command line.",
+                "Use Cloud Dataproc to run your transformations. Use the diagnose command to generate an operational output archive. Locate the bottleneck and adjust cluster resources.",
+                "Use Cloud Dataflow to run your transformations. Monitor the job system lag with Stackdriver. Use the default autoscaling setting for worker instances.",
+                "Use Cloud Dataflow to run your transformations. Monitor the total execution time for a sampling of jobs. Configure the job to use non-default Compute Engine machine types when needed."
+            ],
+            "correct": [
+                "Use Cloud Dataflow to run your transformations. Monitor the job system lag with Stackdriver. Use the default autoscaling setting for worker instances."
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-58": {
+            "question": "Your infrastructure includes a set of YouTube channels. You have been tasked with creating a process for sending the YouTube channel data to Google Cloud for analysis. You want to design a solution that allows your world-wide marketing teams to perform ANSI SQL and other types of analysis on up-to-date YouTube channels log data. How should you set up the log data transfer into Google Cloud?",
+            "answers": [
+                "Use Storage Transfer Service to transfer the offsite backup files to a Cloud Storage Multi-Regional storage bucket as a final destination.",
+                "Use Storage Transfer Service to transfer the offsite backup files to a Cloud Storage Regional bucket as a final destination.",
+                "Use BigQuery Data Transfer Service to transfer the offsite backup files to a Cloud Storage Multi-Regional storage bucket as a final destination.",
+                "Use BigQuery Data Transfer Service to transfer the offsite backup files to a Cloud Storage Regional storage bucket as a final destination."
+            ],
+            "correct": [
+                "Use Storage Transfer Service to transfer the offsite backup files to a Cloud Storage Multi-Regional storage bucket as a final destination."
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-59": {
+            "question": "You are designing storage for very large text files for a data pipeline on Google Cloud. You want to support ANSI SQL queries. You also want to support compression and parallel load from the input locations using Google recommended practices. What should you do?",
+            "answers": [
+                "Transform text files to compressed Avro using Cloud Dataflow. Use BigQuery for storage and query.",
+                "Transform text files to compressed Avro using Cloud Dataflow. Use Cloud Storage and BigQuery permanent linked tables for query.",
+                "Compress text files to gzip using the Grid Computing Tools. Use BigQuery for storage and query.",
+                "Compress text files to gzip using the Grid Computing Tools. Use Cloud Storage, and then import into Cloud Bigtable for query."
+            ],
+            "correct": [
+                "Transform text files to compressed Avro using Cloud Dataflow. Use Cloud Storage and BigQuery permanent linked tables for query."
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-60": {
+            "question": "You are developing an application on Google Cloud that will automatically generate subject labels for users' blog posts. You are under competitive pressure to add this feature quickly, and you have no additional developer resources. No one on your team has experience with machine learning. What should you do?",
+            "answers": [
+                "Call the Cloud Natural Language API from your application. Process the generated Entity Analysis as labels.",
+                "Call the Cloud Natural Language API from your application. Process the generated Sentiment Analysis as labels.",
+                "Build and train a text classification model using TensorFlow. Deploy the model using Cloud Machine Learning Engine. Call the model from your application and process the results as labels.",
+                "Build and train a text classification model using TensorFlow. Deploy the model using a Kubernetes Engine cluster. Call the model from your application and process the results as labels."
+            ],
+            "correct": [
+                "Call the Cloud Natural Language API from your application. Process the generated Entity Analysis as labels."
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-61": {
+            "question": "You are designing storage for 20 TB of text files as part of deploying a data pipeline on Google Cloud. Your input data is in CSV format. You want to minimize the cost of querying aggregate values for multiple users who will query the data in Cloud Storage with multiple engines. Which storage service and schema design should you use?",
+            "answers": [
+                "Use Cloud Bigtable for storage. Install the HBase shell on a Compute Engine instance to query the Cloud Bigtable data.",
+                "Use Cloud Bigtable for storage. Link as permanent tables in BigQuery for query.",
+                "Use Cloud Storage for storage. Link as permanent tables in BigQuery for query.",
+                "Use Cloud Storage for storage. Link as temporary tables in BigQuery for query."
+            ],
+            "correct": [
+                "Use Cloud Storage for storage. Link as permanent tables in BigQuery for query."
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-62": {
+            "question": "You are designing storage for two relational tables that are part of a 10-TB database on Google Cloud. You want to support transactions that scale horizontally.\nYou also want to optimize data for range queries on non-key columns. What should you do?",
+            "answers": [
+                "Use Cloud SQL for storage. Add secondary indexes to support query patterns.",
+                "Use Cloud SQL for storage. Use Cloud Dataflow to transform data to support query patterns.",
+                "Use Cloud Spanner for storage. Add secondary indexes to support query patterns.",
+                "Use Cloud Spanner for storage. Use Cloud Dataflow to transform data to support query patterns."
+            ],
+            "correct": [
+                "Use Cloud Spanner for storage. Add secondary indexes to support query patterns."
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-63": {
+            "question": "Your financial services company is moving to cloud technology and wants to store 50 TB of financial time-series data in the cloud. This data is updated frequently and new data will be streaming in all the time. Your company also wants to move their existing Apache Hadoop jobs to the cloud to get insights into this data.\nWhich product should they use to store the data?",
+            "answers": [
+                "Cloud Bigtable",
+                "Google BigQuery",
+                "Google Cloud Storage",
+                "Google Cloud Datastore"
+            ],
+            "correct": [
+                "Cloud Bigtable"
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-64": {
+            "question": "An organization maintains a Google BigQuery dataset that contains tables with user-level data. They want to expose aggregates of this data to other Google Cloud projects, while still controlling access to the user-level data. Additionally, they need to minimize their overall storage cost and ensure the analysis cost for other projects is assigned to those projects. What should they do?",
+            "answers": [
+                "Create and share an authorized view that provides the aggregate results.",
+                "Create and share a new dataset and view that provides the aggregate results.",
+                "Create and share a new dataset and table that contains the aggregate results.",
+                "Create dataViewer Identity and Access Management (IAM) roles on the dataset to enable sharing."
+            ],
+            "correct": [
+                "Create and share an authorized view that provides the aggregate results."
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-65": {
+            "question": "Government regulations in your industry mandate that you have to maintain an auditable record of access to certain types of data. Assuming that all expiring logs will be archived correctly, where should you store data that is subject to that mandate?",
+            "answers": [
+                "Encrypted on Cloud Storage with user-supplied encryption keys. A separate decryption key will be given to each authorized user.",
+                "In a BigQuery dataset that is viewable only by authorized personnel, with the Data Access log used to provide the auditability.",
+                "In Cloud SQL, with separate database user names to each user. The Cloud SQL Admin activity logs will be used to provide the auditability.",
+                "In a bucket on Cloud Storage that is accessible only by an AppEngine service that collects user information and logs the access before providing a link to the bucket."
+            ],
+            "correct": [
+                "In a bucket on Cloud Storage that is accessible only by an AppEngine service that collects user information and logs the access before providing a link to the bucket."
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-66": {
             "question": "",
             "answers": [
                 "",
@@ -1099,7 +1414,7 @@
         }
     },
     {
-        "question-2": {
+        "question-67": {
             "question": "",
             "answers": [
                 "",
@@ -1120,7 +1435,7 @@
         }
     },
     {
-        "question-2": {
+        "question-68": {
             "question": "",
             "answers": [
                 "",
@@ -1141,7 +1456,7 @@
         }
     },
     {
-        "question-2": {
+        "question-69": {
             "question": "",
             "answers": [
                 "",
@@ -1162,7 +1477,7 @@
         }
     },
     {
-        "question-2": {
+        "question-70": {
             "question": "",
             "answers": [
                 "",
@@ -1183,7 +1498,7 @@
         }
     },
     {
-        "question-2": {
+        "question-71": {
             "question": "",
             "answers": [
                 "",
@@ -1204,7 +1519,7 @@
         }
     },
     {
-        "question-2": {
+        "question-72": {
             "question": "",
             "answers": [
                 "",
@@ -1225,7 +1540,7 @@
         }
     },
     {
-        "question-2": {
+        "question-73": {
             "question": "",
             "answers": [
                 "",
@@ -1246,7 +1561,7 @@
         }
     },
     {
-        "question-2": {
+        "question-74": {
             "question": "",
             "answers": [
                 "",
@@ -1267,7 +1582,7 @@
         }
     },
     {
-        "question-2": {
+        "question-75": {
             "question": "",
             "answers": [
                 "",
@@ -1288,7 +1603,7 @@
         }
     },
     {
-        "question-2": {
+        "question-76": {
             "question": "",
             "answers": [
                 "",
@@ -1309,7 +1624,7 @@
         }
     },
     {
-        "question-2": {
+        "question-77": {
             "question": "",
             "answers": [
                 "",
@@ -1330,7 +1645,7 @@
         }
     },
     {
-        "question-3": {
+        "question-78": {
             "question": "",
             "answers": [
                 "",
@@ -1351,7 +1666,7 @@
         }
     },
     {
-        "question-2": {
+        "question-79": {
             "question": "",
             "answers": [
                 "",
@@ -1372,7 +1687,7 @@
         }
     },
     {
-        "question-2": {
+        "question-81": {
             "question": "",
             "answers": [
                 "",
@@ -1393,7 +1708,7 @@
         }
     },
     {
-        "question-2": {
+        "question-82": {
             "question": "",
             "answers": [
                 "",
@@ -1414,7 +1729,7 @@
         }
     },
     {
-        "question-2": {
+        "question-83": {
             "question": "",
             "answers": [
                 "",
@@ -1435,7 +1750,7 @@
         }
     },
     {
-        "question-2": {
+        "question-84": {
             "question": "",
             "answers": [
                 "",
@@ -1456,7 +1771,7 @@
         }
     },
     {
-        "question-2": {
+        "question-85": {
             "question": "",
             "answers": [
                 "",
@@ -1477,7 +1792,7 @@
         }
     },
     {
-        "question-2": {
+        "question-86": {
             "question": "",
             "answers": [
                 "",
@@ -1498,7 +1813,7 @@
         }
     },
     {
-        "question-2": {
+        "question-87": {
             "question": "",
             "answers": [
                 "",
@@ -1519,7 +1834,7 @@
         }
     },
     {
-        "question-2": {
+        "question-88": {
             "question": "",
             "answers": [
                 "",
@@ -1540,7 +1855,7 @@
         }
     },
     {
-        "question-2": {
+        "question-89": {
             "question": "",
             "answers": [
                 "",
@@ -1561,7 +1876,7 @@
         }
     },
     {
-        "question-2": {
+        "question-90": {
             "question": "",
             "answers": [
                 "",
@@ -1582,7 +1897,7 @@
         }
     },
     {
-        "question-2": {
+        "question-91": {
             "question": "",
             "answers": [
                 "",
@@ -1603,7 +1918,7 @@
         }
     },
     {
-        "question-2": {
+        "question-92": {
             "question": "",
             "answers": [
                 "",
@@ -1624,7 +1939,7 @@
         }
     },
     {
-        "question-2": {
+        "question-93": {
             "question": "",
             "answers": [
                 "",
@@ -1645,7 +1960,7 @@
         }
     },
     {
-        "question-2": {
+        "question-94": {
             "question": "",
             "answers": [
                 "",
@@ -1666,7 +1981,7 @@
         }
     },
     {
-        "question-2": {
+        "question-95": {
             "question": "",
             "answers": [
                 "",
@@ -1687,7 +2002,7 @@
         }
     },
     {
-        "question-2": {
+        "question-96": {
             "question": "",
             "answers": [
                 "",
@@ -1708,7 +2023,7 @@
         }
     },
     {
-        "question-2": {
+        "question-97": {
             "question": "",
             "answers": [
                 "",
@@ -1729,7 +2044,7 @@
         }
     },
     {
-        "question-2": {
+        "question-98": {
             "question": "",
             "answers": [
                 "",
@@ -1750,7 +2065,7 @@
         }
     },
     {
-        "question-3": {
+        "question-99": {
             "question": "",
             "answers": [
                 "",
@@ -1771,7 +2086,7 @@
         }
     },
     {
-        "question-2": {
+        "question-100": {
             "question": "",
             "answers": [
                 "",
@@ -1792,7 +2107,7 @@
         }
     },
     {
-        "question-2": {
+        "question-101": {
             "question": "",
             "answers": [
                 "",
@@ -1813,7 +2128,7 @@
         }
     },
     {
-        "question-2": {
+        "question-102": {
             "question": "",
             "answers": [
                 "",
@@ -1834,322 +2149,7 @@
         }
     },
     {
-        "question-2": {
-            "question": "",
-            "answers": [
-                "",
-                "",
-                "",
-                ""
-            ],
-            "correct": [
-                ""
-            ],
-            "theme": "",
-            "keywords": [
-                ""
-            ],
-            "explanation": [
-                ""
-            ]
-        }
-    },
-    {
-        "question-2": {
-            "question": "",
-            "answers": [
-                "",
-                "",
-                "",
-                ""
-            ],
-            "correct": [
-                ""
-            ],
-            "theme": "",
-            "keywords": [
-                ""
-            ],
-            "explanation": [
-                ""
-            ]
-        }
-    },
-    {
-        "question-2": {
-            "question": "",
-            "answers": [
-                "",
-                "",
-                "",
-                ""
-            ],
-            "correct": [
-                ""
-            ],
-            "theme": "",
-            "keywords": [
-                ""
-            ],
-            "explanation": [
-                ""
-            ]
-        }
-    },
-    {
-        "question-2": {
-            "question": "",
-            "answers": [
-                "",
-                "",
-                "",
-                ""
-            ],
-            "correct": [
-                ""
-            ],
-            "theme": "",
-            "keywords": [
-                ""
-            ],
-            "explanation": [
-                ""
-            ]
-        }
-    },
-    {
-        "question-2": {
-            "question": "",
-            "answers": [
-                "",
-                "",
-                "",
-                ""
-            ],
-            "correct": [
-                ""
-            ],
-            "theme": "",
-            "keywords": [
-                ""
-            ],
-            "explanation": [
-                ""
-            ]
-        }
-    },
-    {
-        "question-2": {
-            "question": "",
-            "answers": [
-                "",
-                "",
-                "",
-                ""
-            ],
-            "correct": [
-                ""
-            ],
-            "theme": "",
-            "keywords": [
-                ""
-            ],
-            "explanation": [
-                ""
-            ]
-        }
-    },
-    {
-        "question-2": {
-            "question": "",
-            "answers": [
-                "",
-                "",
-                "",
-                ""
-            ],
-            "correct": [
-                ""
-            ],
-            "theme": "",
-            "keywords": [
-                ""
-            ],
-            "explanation": [
-                ""
-            ]
-        }
-    },
-    {
-        "question-2": {
-            "question": "",
-            "answers": [
-                "",
-                "",
-                "",
-                ""
-            ],
-            "correct": [
-                ""
-            ],
-            "theme": "",
-            "keywords": [
-                ""
-            ],
-            "explanation": [
-                ""
-            ]
-        }
-    },
-    {
-        "question-2": {
-            "question": "",
-            "answers": [
-                "",
-                "",
-                "",
-                ""
-            ],
-            "correct": [
-                ""
-            ],
-            "theme": "",
-            "keywords": [
-                ""
-            ],
-            "explanation": [
-                ""
-            ]
-        }
-    },
-    {
-        "question-2": {
-            "question": "",
-            "answers": [
-                "",
-                "",
-                "",
-                ""
-            ],
-            "correct": [
-                ""
-            ],
-            "theme": "",
-            "keywords": [
-                ""
-            ],
-            "explanation": [
-                ""
-            ]
-        }
-    },
-    {
-        "question-2": {
-            "question": "",
-            "answers": [
-                "",
-                "",
-                "",
-                ""
-            ],
-            "correct": [
-                ""
-            ],
-            "theme": "",
-            "keywords": [
-                ""
-            ],
-            "explanation": [
-                ""
-            ]
-        }
-    },
-    {
-        "question-2": {
-            "question": "",
-            "answers": [
-                "",
-                "",
-                "",
-                ""
-            ],
-            "correct": [
-                ""
-            ],
-            "theme": "",
-            "keywords": [
-                ""
-            ],
-            "explanation": [
-                ""
-            ]
-        }
-    },
-    {
-        "question-2": {
-            "question": "",
-            "answers": [
-                "",
-                "",
-                "",
-                ""
-            ],
-            "correct": [
-                ""
-            ],
-            "theme": "",
-            "keywords": [
-                ""
-            ],
-            "explanation": [
-                ""
-            ]
-        }
-    },
-    {
-        "question-2": {
-            "question": "",
-            "answers": [
-                "",
-                "",
-                "",
-                ""
-            ],
-            "correct": [
-                ""
-            ],
-            "theme": "",
-            "keywords": [
-                ""
-            ],
-            "explanation": [
-                ""
-            ]
-        }
-    },
-    {
-        "question-2": {
-            "question": "",
-            "answers": [
-                "",
-                "",
-                "",
-                ""
-            ],
-            "correct": [
-                ""
-            ],
-            "theme": "",
-            "keywords": [
-                ""
-            ],
-            "explanation": [
-                ""
-            ]
-        }
-    },
-    {
-        "question-2": {
+        "question-103": {
             "question": "",
             "answers": [
                 "",
