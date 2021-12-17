@@ -1,0 +1,2153 @@
+[
+    {
+        "question-1": {
+            "question": "Your company built a TensorFlow neutral-network model with a large number of neurons and layers. The model fits well for the training data. However, when tested against new data, it performs poorly. What method can you employ to address this?",
+            "answers": [
+                "Threading",
+                "Serialization",
+                "Dropout Methods",
+                "Dimensionality Reduction"
+            ],
+            "correct": [
+                "Dropout Methods"
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-2": {
+            "question": "You are building a model to make clothing recommendations. You know a user's fashion preference is likely to change over time, so you build a data pipeline to stream new data back to the model as it becomes available. How should you use this data to train the model?",
+            "answers": [
+                "Continuously retrain the model on just the new data.",
+                "Continuously retrain the model on a combination of existing data and the new data.",
+                "Train on the existing data while using the new data as your test set.",
+                "Train on the new data while using the existing data as your test set."
+            ],
+            "correct": [
+                "Continuously retrain the model on a combination of existing data and the new data."
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-3": {
+            "question": "You designed a database for patient records as a pilot project to cover a few hundred patients in three clinics. Your design used a single database table to represent all patients and their visits, and you used self-joins to generate reports. The server resource utilization was at 50%. Since then, the scope of the project has expanded. The database must now store 100 times more patient records. You can no longer run the reports, because they either take too long or they encounter errors with insufficient compute resources. How should you adjust the database design?",
+            "answers": [
+                "Add capacity (memory and disk space) to the database server by the order of 200.",
+                "Shard the tables into smaller ones based on date ranges, and only generate reports with prespecified date ranges.",
+                "Normalize the master patient-record table into the patient table and the visits table, and create other necessary tables to avoid self-join.",
+                "Partition the table into smaller tables, with one for each clinic. Run queries against the smaller table pairs, and use unions for consolidated reports."
+            ],
+            "correct": [
+                "Normalize the master patient-record table into the patient table and the visits table, and create other necessary tables to avoid self-join."
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-4": {
+            "question": "You create an important report for your large team in Google Data Studio 360. The report uses Google BigQuery as its data source. You notice that visualizations are not showing data that is less than 1 hour old. What should you do?",
+            "answers": [
+                "Disable caching by editing the report settings.",
+                "Disable caching in BigQuery by editing table details.",
+                "Refresh your browser tab showing the visualizations.",
+                "Clear your browser history for the past hour then reload the tab showing the virtualizations."
+            ],
+            "correct": [
+                "Disable caching by editing the report settings."
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-5": {
+            "question": "An external customer provides you with a daily dump of data from their database. The data flows into Google Cloud Storage GCS as comma-separated values (CSV) files. You want to analyze this data in Google BigQuery, but the data could have rows that are formatted incorrectly or corrupted. How should you build this pipeline?",
+            "answers": [
+                "Use federated data sources, and check data in the SQL query.",
+                "Enable BigQuery monitoring in Google Stackdriver and create an alert.",
+                "Import the data into BigQuery using the gcloud CLI and set max_bad_records to 0.",
+                "Run a Google Cloud Dataflow batch pipeline to import the data into BigQuery, and push errors to another dead-letter table for analysis."
+            ],
+            "correct": [
+                "Run a Google Cloud Dataflow batch pipeline to import the data into BigQuery, and push errors to another dead-letter table for analysis."
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-6": {
+            "question": "Your weather app queries a database every 15 minutes to get the current temperature. The frontend is powered by Google App Engine and server millions of users. How should you design the frontend to respond to a database failure?",
+            "answers": [
+                "Issue a command to restart the database servers.",
+                "Retry the query with exponential backoff, up to a cap of 15 minutes.",
+                "Retry the query every second until it comes back online to minimize staleness of data.",
+                "Reduce the query frequency to once every hour until the database comes back online."
+            ],
+            "correct": [
+                "Retry the query with exponential backoff, up to a cap of 15 minutes."
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-7": {
+            "question": "You are creating a model to predict housing prices. Due to budget constraints, you must run it on a single resource-constrained virtual machine. Which learning algorithm should you use?",
+            "answers": [
+                "Linear regression",
+                "Logistic classification",
+                "Recurrent neural network",
+                "Feedforward neural network"
+            ],
+            "correct": [
+                "Linear regression"
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-8": {
+            "question": "You are building new real-time data warehouse for your company and will use Google BigQuery streaming inserts. There is no guarantee that data will only be sent in once but you do have a unique ID for each row of data and an event timestamp. You want to ensure that duplicates are not included while interactively querying data. Which query type should you use?",
+            "answers": [
+                "Include ORDER BY DESK on timestamp column and LIMIT to 1.",
+                "Use GROUP BY on the unique ID column and timestamp column and SUM on the values.",
+                "Use the LAG window function with PARTITION by unique ID along with WHERE LAG IS NOT NULL.",
+                "Use the ROW_NUMBER window function with PARTITION by unique ID along with WHERE row equals 1."
+            ],
+            "correct": [
+                "Use the ROW_NUMBER window function with PARTITION by unique ID along with WHERE row equals 1."
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-9": {
+            "question": "Your company is using WILDCARD tables to query data across multiple tables with similar names. The SQL statement is currently failing with the following error:\n# Syntax error : Expected end of statement but got '-' at [4:11]\nSELECT age -\nFROM -\nbigquery-public-data.noaa_gsod.gsod\nWHERE -\nage != 99\nAND_TABLE_SUFFIX = '1929'\nORDER BY -\nage DESC\nWhich table name will make the SQL statement work correctly?",
+            "answers": [
+                "\"bigquery-public-data.noaa_gsod.gsod\"",
+                "bigquery-public-data.noaa_gsod.gsod*",
+                "\"bigquery-public-data.noaa_gsod.gsod*\"",
+                "`bigquery-public-data.noaa_gsod.gsod*`"
+            ],
+            "correct": [
+                "`bigquery-public-data.noaa_gsod.gsod*`"
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-10": {
+            "question": "Your company is in a highly regulated industry. One of your requirements is to ensure individual users have access only to the minimum amount of information required to do their jobs. You want to enforce this requirement with Google BigQuery. Which three approaches can you take? (Choose three.)",
+            "answers": [
+                "Disable writes to certain tables.",
+                "Restrict access to tables by role.",
+                "Ensure that the data is encrypted at all times.",
+                "Restrict BigQuery API access to approved users.",
+                "Segregate data across multiple tables or databases.",
+                "Use Google Stackdriver Audit Logging to determine policy violations."
+            ],
+            "correct": [
+                "Restrict access to tables by role.",
+                "Restrict BigQuery API access to approved users.",
+                "Segregate data across multiple tables or databases."
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-11": {
+            "question": "You are designing a basket abandonment system for an ecommerce company. The system will send a message to a user based on these rules:\n-> No interaction by the user on the site for 1 hour\n-> Has added more than $30 worth of products to the basket\n-> Has not completed a transaction\nYou use Google Cloud Dataflow to process the data and decide if a message should be sent. How should you design the pipeline?",
+            "answers": [
+                "Use a fixed-time window with a duration of 60 minutes.",
+                "Use a sliding time window with a duration of 60 minutes.",
+                "Use a session window with a gap time duration of 60 minutes.",
+                "Use a global window with a time based trigger with a delay of 60 minutes."
+            ],
+            "correct": [
+                "Use a session window with a gap time duration of 60 minutes."
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-12": {
+            "question": "Your company handles data processing for a number of different clients. Each client prefers to use their own suite of analytics tools, with some allowing direct query access via Google BigQuery. You need to secure the data so that clients cannot see each other's data. You want to ensure appropriate access to the data.\nWhich three steps should you take? (Choose three.)",
+            "answers": [
+                "Load data into different partitions.",
+                "Load data into a different dataset for each client.",
+                "Put each client's BigQuery dataset into a different table.",
+                "Restrict a client's dataset to approved users.",
+                "Only allow a service account to access the datasets.",
+                "Use the appropriate identity and access management (IAM) roles for each client's users."
+            ],
+            "correct": [
+                "Load data into a different dataset for each client.",
+                "Restrict a client's dataset to approved users.",
+                "Use the appropriate identity and access management (IAM) roles for each client's users."
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-13": {
+            "question": "You want to process payment transactions in a point-of-sale application that will run on Google Cloud Platform. Your user base could grow exponentially, but you do not want to manage infrastructure scaling.\nWhich Google database service should you use?",
+            "answers": [
+                "Cloud SQL",
+                "BigQuery",
+                "Cloud Bigtable",
+                "Cloud Datastore"
+            ],
+            "correct": [
+                "Cloud Bigtable"
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-14": {
+            "question": "You want to use a database of information about tissue samples to classify future tissue samples as either normal or mutated. You are evaluating an unsupervised anomaly detection method for classifying the tissue samples. Which two characteristic support this method? (Choose two.)",
+            "answers": [
+                "There are very few occurrences of mutations relative to normal samples.",
+                "There are roughly equal occurrences of both normal and mutated samples in the database.",
+                "You expect future mutations to have different features from the mutated samples in the database.",
+                "You expect future mutations to have similar features to the mutated samples in the database.",
+                "You already have labels for which samples are mutated and which are normal in the database."
+            ],
+            "correct": [
+                "There are very few occurrences of mutations relative to normal samples.",
+                "You expect future mutations to have similar features to the mutated samples in the database."
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-15": {
+            "question": "You need to store and analyze social media postings in Google BigQuery at a rate of 10,000 messages per minute in near real-time. Initially, design the application to use streaming inserts for individual postings. Your application also performs data aggregations right after the streaming inserts. You discover that the queries after streaming inserts do not exhibit strong consistency, and reports from the queries might miss in-flight data. How can you adjust your application design?",
+            "answers": [
+                "Re-write the application to load accumulated data every 2 minutes.",
+                "Convert the streaming insert code to batch load for individual messages.",
+                "Load the original message to Google Cloud SQL, and export the table every hour to BigQuery via streaming inserts.",
+                "Estimate the average latency for data availability after streaming inserts, and always run queries after waiting twice as long."
+            ],
+            "correct": [
+                "Estimate the average latency for data availability after streaming inserts, and always run queries after waiting twice as long."
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-16": {
+            "question": "Your startup has never implemented a formal security policy. Currently, everyone in the company has access to the datasets stored in Google BigQuery. Teams have freedom to use the service as they see fit, and they have not documented their use cases. You have been asked to secure the data warehouse. You need to discover what everyone is doing. What should you do first?",
+            "answers": [
+                "Use Google Stackdriver Audit Logs to review data access.",
+                "Get the identity and access management IIAM) policy of each table",
+                "Use Stackdriver Monitoring to see the usage of BigQuery query slots.",
+                "Use the Google Cloud Billing API to see what account the warehouse is being billed to."
+            ],
+            "correct": [
+                "Use Google Stackdriver Audit Logs to review data access."
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-17": {
+            "question": "Your company is migrating their 30-node Apache Hadoop cluster to the cloud. They want to re-use Hadoop jobs they have already created and minimize the management of the cluster as much as possible. They also want to be able to persist data beyond the life of the cluster. What should you do?",
+            "answers": [
+                "Create a Google Cloud Dataflow job to process the data.",
+                "Create a Google Cloud Dataproc cluster that uses persistent disks for HDFS.",
+                "Create a Hadoop cluster on Google Compute Engine that uses persistent disks.",
+                "Create a Cloud Dataproc cluster that uses the Google Cloud Storage connector.",
+                "Create a Hadoop cluster on Google Compute Engine that uses Local SSD disks."
+            ],
+            "correct": [
+                "Create a Cloud Dataproc cluster that uses the Google Cloud Storage connector."
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-18": {
+            "question": "Business owners at your company have given you a database of bank transactions. Each row contains the user ID, transaction type, transaction location, and transaction amount. They ask you to investigate what type of machine learning can be applied to the data. Which three machine learning applications can you use? (Choose three.)",
+            "answers": [
+                "Supervised learning to determine which transactions are most likely to be fraudulent.",
+                "Unsupervised learning to determine which transactions are most likely to be fraudulent.",
+                "Clustering to divide the transactions into N categories based on feature similarity.",
+                "Supervised learning to predict the location of a transaction.",
+                "Reinforcement learning to predict the location of a transaction.",
+                "Unsupervised learning to predict the location of a transaction."
+            ],
+            "correct": [
+                "Unsupervised learning to determine which transactions are most likely to be fraudulent.",
+                "Unsupervised learning to predict the location of a transaction.",
+                "Clustering to divide the transactions into N categories based on feature similarity."
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-19": {
+            "question": "Your company's on-premises Apache Hadoop servers are approaching end-of-life, and IT has decided to migrate the cluster to Google Cloud Dataproc. A like-for- like migration of the cluster would require 50 TB of Google Persistent Disk per node. The CIO is concerned about the cost of using that much block storage. You want to minimize the storage cost of the migration. What should you do?",
+            "answers": [
+                "Put the data into Google Cloud Storage.",
+                "Use preemptible virtual machines (VMs) for the Cloud Dataproc cluster.",
+                "Tune the Cloud Dataproc cluster so that there is just enough disk for all data.",
+                "Migrate some of the cold data into Google Cloud Storage, and keep only the hot data in Persistent Disk."
+            ],
+            "correct": [
+                "Put the data into Google Cloud Storage."
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-20": {
+            "question": "You work for a car manufacturer and have set up a data pipeline using Google Cloud Pub/Sub to capture anomalous sensor events. You are using a push subscription in Cloud Pub/Sub that calls a custom HTTPS endpoint that you have created to take action of these anomalous events as they occur. Your custom HTTPS endpoint keeps getting an inordinate amount of duplicate messages. What is the most likely cause of these duplicate messages?",
+            "answers": [
+                "The message body for the sensor event is too large.",
+                "Your custom endpoint has an out-of-date SSL certificate.",
+                "The Cloud Pub/Sub topic has too many messages published to it.",
+                "Your custom endpoint is not acknowledging messages within the acknowledgement deadline."
+            ],
+            "correct": [
+                "Your custom endpoint is not acknowledging messages within the acknowledgement deadline."
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-21": {
+            "question": "Your company uses a proprietary system to send inventory data every 6 hours to a data ingestion service in the cloud. Transmitted data includes a payload of several fields and the timestamp of the transmission. If there are any concerns about a transmission, the system re-transmits the data. How should you deduplicate the data most efficiency?",
+            "answers": [
+                "Assign global unique identifiers (GUID) to each data entry.",
+                "Compute the hash value of each data entry, and compare it with all historical data.",
+                "Store each data entry as the primary key in a separate database and apply an index.",
+                "Maintain a database table to store the hash value and other metadata for each data entry."
+            ],
+            "correct": [
+                "Assign global unique identifiers (GUID) to each data entry.c"
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-22": {
+            "question": "Your company has hired a new data scientist who wants to perform complicated analyses across very large datasets stored in Google Cloud Storage and in a Cassandra cluster on Google Compute Engine. The scientist primarily wants to create labelled data sets for machine learning projects, along with some visualization tasks. She reports that her laptop is not powerful enough to perform her tasks and it is slowing her down. You want to help her perform her tasks. What should you do?",
+            "answers": [
+                "Run a local version of Jupiter on the laptop.",
+                "Grant the user access to Google Cloud Shell.",
+                "Host a visualization tool on a VM on Google Compute Engine.",
+                "Deploy Google Cloud Datalab to a virtual machine (VM) on Google Compute Engine."
+            ],
+            "correct": [
+                "Deploy Google Cloud Datalab to a virtual machine (VM) on Google Compute Engine."
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-23": {
+            "question": "You are deploying 10,000 new Internet of Things devices to collect temperature data in your warehouses globally. You need to process, store and analyze these very large datasets in real time. What should you do?",
+            "answers": [
+                "Send the data to Google Cloud Datastore and then export to BigQuery.",
+                "Send the data to Google Cloud Pub/Sub, stream Cloud Pub/Sub to Google Cloud Dataflow, and store the data in Google BigQuery.",
+                "Send the data to Cloud Storage and then spin up an Apache Hadoop cluster as needed in Google Cloud Dataproc whenever analysis is required.",
+                "Export logs in batch to Google Cloud Storage and then spin up a Google Cloud SQL instance, import the data from Cloud Storage, and run an analysis as needed."
+            ],
+            "correct": [
+                "Send the data to Google Cloud Pub/Sub, stream Cloud Pub/Sub to Google Cloud Dataflow, and store the data in Google BigQuery."
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-24": {
+            "question": "You have spent a few days loading data from comma-separated values (CSV) files into the Google BigQuery table CLICK_STREAM. The column DT stores the epoch time of click events. For convenience, you chose a simple schema where every field is treated as the STRING type. Now, you want to compute web session durations of users who visit your site, and you want to change its data type to the TIMESTAMP. You want to minimize the migration effort without making future queries computationally expensive. What should you do?",
+            "answers": [
+                "Delete the table CLICK_STREAM, and then re-create it such that the column DT is of the TIMESTAMP type. Reload the data.",
+                "Add a column TS of the TIMESTAMP type to the table CLICK_STREAM, and populate the numeric values from the column TS for each row. Reference the column TS instead of the column DT from now on.",
+                "Create a view CLICK_STREAM_V, where strings from the column DT are cast into TIMESTAMP values. Reference the view CLICK_STREAM_V instead of the table CLICK_STREAM from now on.",
+                "Add two columns to the table CLICK STREAM: TS of the TIMESTAMP type and IS_NEW of the BOOLEAN type. Reload all data in append mode. For each appended row, set the value of IS_NEW to true. For future queries, reference the column TS instead of the column DT, with the WHERE clause ensuring that the value of IS_NEW must be true.",
+                "Construct a query to return every row of the table CLICK_STREAM, while using the built-in function to cast strings from the column DT into TIMESTAMP values. Run the query into a destination table NEW_CLICK_STREAM, in which the column TS is the TIMESTAMP type. Reference the table NEW_CLICK_STREAM instead of the table CLICK_STREAM from now on. In the future, new data is loaded into the table NEW_CLICK_STREAM."
+            ],
+            "correct": [
+                "Construct a query to return every row of the table CLICK_STREAM, while using the built-in function to cast strings from the column DT into TIMESTAMP values. Run the query into a destination table NEW_CLICK_STREAM, in which the column TS is the TIMESTAMP type. Reference the table NEW_CLICK_STREAM instead of the table CLICK_STREAM from now on. In the future, new data is loaded into the table NEW_CLICK_STREAM."
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-25": {
+            "question": "You want to use Google Stackdriver Logging to monitor Google BigQuery usage. You need an instant notification to be sent to your monitoring tool when new data is appended to a certain table using an insert job, but you do not want to receive notifications for other tables. What should you do?",
+            "answers": [
+                "Make a call to the Stackdriver API to list all logs, and apply an advanced filter.",
+                "In the Stackdriver logging admin interface, and enable a log sink export to BigQuery.",
+                "In the Stackdriver logging admin interface, enable a log sink export to Google Cloud Pub/Sub, and subscribe to the topic from your monitoring tool.",
+                "Using the Stackdriver API, create a project sink with advanced log filter to export to Pub/Sub, and subscribe to the topic from your monitoring tool."
+            ],
+            "correct": [
+                "Using the Stackdriver API, create a project sink with advanced log filter to export to Pub/Sub, and subscribe to the topic from your monitoring tool."
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-26": {
+            "question": "You are working on a sensitive project involving private user data. You have set up a project on Google Cloud Platform to house your work internally. An external consultant is going to assist with coding a complex transformation in a Google Cloud Dataflow pipeline for your project. How should you maintain users privacy?",
+            "answers": [
+                "Grant the consultant the Viewer role on the project.",
+                "Grant the consultant the Cloud Dataflow Developer role on the project.",
+                "Create a service account and allow the consultant to log on with it.",
+                "Create an anonymized sample of the data for the consultant to work with in a different project."
+            ],
+            "correct": [
+                "Grant the consultant the Cloud Dataflow Developer role on the project."
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-27": {
+            "question": "You are building a model to predict whether or not it will rain on a given day. You have thousands of input features and want to see if you can improve training speed by removing some features while having a minimum effect on model accuracy. What can you do?",
+            "answers": [
+                "Eliminate features that are highly correlated to the output labels.",
+                "Combine highly co-dependent features into one representative feature.",
+                "Instead of feeding in each feature individually, average their values in batches of 3.",
+                "Remove the features that have null values for more than 50% of the training records."
+            ],
+            "correct": [
+                "Combine highly co-dependent features into one representative feature."
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-28": {
+            "question": "Your company is performing data preprocessing for a learning algorithm in Google Cloud Dataflow. Numerous data logs are being are being generated during this step, and the team wants to analyze them. Due to the dynamic nature of the campaign, the data is growing exponentially every hour.\nThe data scientists have written the following code to read the data for a new key features in the logs.\n\nBigQueryIO.Read -\n.named('ReadLogData')\n.from('clouddataflow-readonly:samples.log_data')\nYou want to improve the performance of this data read. What should you do?",
+            "answers": [
+                "Specify the TableReference object in the code.",
+                "Use .fromQuery operation to read specific fields from the table.",
+                "Use of both the Google BigQuery TableSchema and TableFieldSchema classes.",
+                "Call a transform that returns TableRow objects, where each element in the PCollection represents a single row in the table."
+            ],
+            "correct": [
+                "Use .fromQuery operation to read specific fields from the table."
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-29": {
+            "question": "Your company is streaming real-time sensor data from their factory floor into Bigtable and they have noticed extremely poor performance. How should the row key be redesigned to improve Bigtable performance on queries that populate real-time dashboards?",
+            "answers": [
+                "Use a row key of the form <timestamp>.",
+                "Use a row key of the form <sensorid>.",
+                "Use a row key of the form <timestamp>#<sensorid>.",
+                "Use a row key of the form <sensorid>#<timestamp>."
+            ],
+            "correct": [
+                "Use a row key of the form <sensorid>#<timestamp>."
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-30": {
+            "question": "Your company's customer and order databases are often under heavy load. This makes performing analytics against them difficult without harming operations.\nThe databases are in a MySQL cluster, with nightly backups taken using mysqldump. You want to perform",
+            "answers": [
+                "Add a node to the MySQL cluster and build an OLAP cube there.",
+                "Use an ETL tool to load the data from MySQL into Google BigQuery.",
+                "Connect an on-premises Apache Hadoop cluster to MySQL and perform ETL.",
+                "Mount the backups to Google Cloud SQL, and then process the data using Google Cloud Dataproc."
+            ],
+            "correct": [
+                "Use an ETL tool to load the data from MySQL into Google BigQuery."
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-31": {
+            "question": "You have Google Cloud Dataflow streaming pipeline running with a Google Cloud Pub/Sub subscription as the source. You need to make an update to the code that will make the new Cloud Dataflow pipeline incompatible with the current version. You do not want to lose any data when making this update. What should you do?",
+            "answers": [
+                "Update the current pipeline and use the drain flag.",
+                "Update the current pipeline and provide the transform mapping JSON object.",
+                "Create a new pipeline that has the same Cloud Pub/Sub subscription and cancel the old pipeline.",
+                "Create a new pipeline that has a new Cloud Pub/Sub subscription and cancel the old pipeline."
+            ],
+            "correct": [
+                "Update the current pipeline and provide the transform mapping JSON object."
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-32": {
+            "question": "Your company is running their first dynamic campaign, serving different offers by analyzing real-time data during the holiday season. The data scientists are collecting terabytes of data that rapidly grows every hour during their 30-day campaign. They are using Google Cloud Dataflow to preprocess the data and collect the feature (signals) data that is needed for the machine learning model in Google Cloud Bigtable. The team is observing suboptimal performance with reads and writes of their initial load of 10 TB of data. They want to improve this performance while minimizing cost. What should they do?",
+            "answers": [
+                "Redefine the schema by evenly distributing reads and writes across the row space of the table.",
+                "The performance issue should be resolved over time as the site of the BigDate cluster is increased.",
+                "Redesign the schema to use a single row key to identify values that need to be updated frequently in the cluster.",
+                "Redesign the schema to use row keys based on numeric IDs that increase sequentially per user viewing the offers."
+            ],
+            "correct": [
+                "Redefine the schema by evenly distributing reads and writes across the row space of the table."
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-33": {
+            "question": "Your software uses a simple JSON format for all messages. These messages are published to Google Cloud Pub/Sub, then processed with Google Cloud\nDataflow to create a real-time dashboard for the CFO. During testing, you notice that some messages are missing in the dashboard. You check the logs, and all messages are being published to Cloud Pub/Sub successfully. What should you do next?",
+            "answers": [
+                "Check the dashboard application to see if it is not displaying correctly.",
+                "Run a fixed dataset through the Cloud Dataflow pipeline and analyze the output.",
+                "Use Google Stackdriver Monitoring on Cloud Pub/Sub to find the missing messages.",
+                "Switch Cloud Dataflow to pull messages from Cloud Pub/Sub instead of Cloud Pub/Sub pushing messages to Cloud Dataflow."
+            ],
+            "correct": [
+                "Use Google Stackdriver Monitoring on Cloud Pub/Sub to find the missing messages."
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-2": {
+            "question": "",
+            "answers": [
+                "",
+                "",
+                "",
+                ""
+            ],
+            "correct": [
+                ""
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-2": {
+            "question": "",
+            "answers": [
+                "",
+                "",
+                "",
+                ""
+            ],
+            "correct": [
+                ""
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-2": {
+            "question": "",
+            "answers": [
+                "",
+                "",
+                "",
+                ""
+            ],
+            "correct": [
+                ""
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-2": {
+            "question": "",
+            "answers": [
+                "",
+                "",
+                "",
+                ""
+            ],
+            "correct": [
+                ""
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-2": {
+            "question": "",
+            "answers": [
+                "",
+                "",
+                "",
+                ""
+            ],
+            "correct": [
+                ""
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-2": {
+            "question": "",
+            "answers": [
+                "",
+                "",
+                "",
+                ""
+            ],
+            "correct": [
+                ""
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-2": {
+            "question": "",
+            "answers": [
+                "",
+                "",
+                "",
+                ""
+            ],
+            "correct": [
+                ""
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-2": {
+            "question": "",
+            "answers": [
+                "",
+                "",
+                "",
+                ""
+            ],
+            "correct": [
+                ""
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-2": {
+            "question": "",
+            "answers": [
+                "",
+                "",
+                "",
+                ""
+            ],
+            "correct": [
+                ""
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-3": {
+            "question": "",
+            "answers": [
+                "",
+                "",
+                "",
+                ""
+            ],
+            "correct": [
+                ""
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-2": {
+            "question": "",
+            "answers": [
+                "",
+                "",
+                "",
+                ""
+            ],
+            "correct": [
+                ""
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-2": {
+            "question": "",
+            "answers": [
+                "",
+                "",
+                "",
+                ""
+            ],
+            "correct": [
+                ""
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-2": {
+            "question": "",
+            "answers": [
+                "",
+                "",
+                "",
+                ""
+            ],
+            "correct": [
+                ""
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-2": {
+            "question": "",
+            "answers": [
+                "",
+                "",
+                "",
+                ""
+            ],
+            "correct": [
+                ""
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-2": {
+            "question": "",
+            "answers": [
+                "",
+                "",
+                "",
+                ""
+            ],
+            "correct": [
+                ""
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-2": {
+            "question": "",
+            "answers": [
+                "",
+                "",
+                "",
+                ""
+            ],
+            "correct": [
+                ""
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-2": {
+            "question": "",
+            "answers": [
+                "",
+                "",
+                "",
+                ""
+            ],
+            "correct": [
+                ""
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-2": {
+            "question": "",
+            "answers": [
+                "",
+                "",
+                "",
+                ""
+            ],
+            "correct": [
+                ""
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-2": {
+            "question": "",
+            "answers": [
+                "",
+                "",
+                "",
+                ""
+            ],
+            "correct": [
+                ""
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-2": {
+            "question": "",
+            "answers": [
+                "",
+                "",
+                "",
+                ""
+            ],
+            "correct": [
+                ""
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-2": {
+            "question": "",
+            "answers": [
+                "",
+                "",
+                "",
+                ""
+            ],
+            "correct": [
+                ""
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-2": {
+            "question": "",
+            "answers": [
+                "",
+                "",
+                "",
+                ""
+            ],
+            "correct": [
+                ""
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-2": {
+            "question": "",
+            "answers": [
+                "",
+                "",
+                "",
+                ""
+            ],
+            "correct": [
+                ""
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-2": {
+            "question": "",
+            "answers": [
+                "",
+                "",
+                "",
+                ""
+            ],
+            "correct": [
+                ""
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-2": {
+            "question": "",
+            "answers": [
+                "",
+                "",
+                "",
+                ""
+            ],
+            "correct": [
+                ""
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-2": {
+            "question": "",
+            "answers": [
+                "",
+                "",
+                "",
+                ""
+            ],
+            "correct": [
+                ""
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-2": {
+            "question": "",
+            "answers": [
+                "",
+                "",
+                "",
+                ""
+            ],
+            "correct": [
+                ""
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-2": {
+            "question": "",
+            "answers": [
+                "",
+                "",
+                "",
+                ""
+            ],
+            "correct": [
+                ""
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-2": {
+            "question": "",
+            "answers": [
+                "",
+                "",
+                "",
+                ""
+            ],
+            "correct": [
+                ""
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-3": {
+            "question": "",
+            "answers": [
+                "",
+                "",
+                "",
+                ""
+            ],
+            "correct": [
+                ""
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-2": {
+            "question": "",
+            "answers": [
+                "",
+                "",
+                "",
+                ""
+            ],
+            "correct": [
+                ""
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-2": {
+            "question": "",
+            "answers": [
+                "",
+                "",
+                "",
+                ""
+            ],
+            "correct": [
+                ""
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-2": {
+            "question": "",
+            "answers": [
+                "",
+                "",
+                "",
+                ""
+            ],
+            "correct": [
+                ""
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-2": {
+            "question": "",
+            "answers": [
+                "",
+                "",
+                "",
+                ""
+            ],
+            "correct": [
+                ""
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-2": {
+            "question": "",
+            "answers": [
+                "",
+                "",
+                "",
+                ""
+            ],
+            "correct": [
+                ""
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-2": {
+            "question": "",
+            "answers": [
+                "",
+                "",
+                "",
+                ""
+            ],
+            "correct": [
+                ""
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-2": {
+            "question": "",
+            "answers": [
+                "",
+                "",
+                "",
+                ""
+            ],
+            "correct": [
+                ""
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-2": {
+            "question": "",
+            "answers": [
+                "",
+                "",
+                "",
+                ""
+            ],
+            "correct": [
+                ""
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-2": {
+            "question": "",
+            "answers": [
+                "",
+                "",
+                "",
+                ""
+            ],
+            "correct": [
+                ""
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-2": {
+            "question": "",
+            "answers": [
+                "",
+                "",
+                "",
+                ""
+            ],
+            "correct": [
+                ""
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-2": {
+            "question": "",
+            "answers": [
+                "",
+                "",
+                "",
+                ""
+            ],
+            "correct": [
+                ""
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-2": {
+            "question": "",
+            "answers": [
+                "",
+                "",
+                "",
+                ""
+            ],
+            "correct": [
+                ""
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-2": {
+            "question": "",
+            "answers": [
+                "",
+                "",
+                "",
+                ""
+            ],
+            "correct": [
+                ""
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-2": {
+            "question": "",
+            "answers": [
+                "",
+                "",
+                "",
+                ""
+            ],
+            "correct": [
+                ""
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-2": {
+            "question": "",
+            "answers": [
+                "",
+                "",
+                "",
+                ""
+            ],
+            "correct": [
+                ""
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-2": {
+            "question": "",
+            "answers": [
+                "",
+                "",
+                "",
+                ""
+            ],
+            "correct": [
+                ""
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-2": {
+            "question": "",
+            "answers": [
+                "",
+                "",
+                "",
+                ""
+            ],
+            "correct": [
+                ""
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-2": {
+            "question": "",
+            "answers": [
+                "",
+                "",
+                "",
+                ""
+            ],
+            "correct": [
+                ""
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-2": {
+            "question": "",
+            "answers": [
+                "",
+                "",
+                "",
+                ""
+            ],
+            "correct": [
+                ""
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-3": {
+            "question": "",
+            "answers": [
+                "",
+                "",
+                "",
+                ""
+            ],
+            "correct": [
+                ""
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-2": {
+            "question": "",
+            "answers": [
+                "",
+                "",
+                "",
+                ""
+            ],
+            "correct": [
+                ""
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-2": {
+            "question": "",
+            "answers": [
+                "",
+                "",
+                "",
+                ""
+            ],
+            "correct": [
+                ""
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-2": {
+            "question": "",
+            "answers": [
+                "",
+                "",
+                "",
+                ""
+            ],
+            "correct": [
+                ""
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-2": {
+            "question": "",
+            "answers": [
+                "",
+                "",
+                "",
+                ""
+            ],
+            "correct": [
+                ""
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-2": {
+            "question": "",
+            "answers": [
+                "",
+                "",
+                "",
+                ""
+            ],
+            "correct": [
+                ""
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-2": {
+            "question": "",
+            "answers": [
+                "",
+                "",
+                "",
+                ""
+            ],
+            "correct": [
+                ""
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-2": {
+            "question": "",
+            "answers": [
+                "",
+                "",
+                "",
+                ""
+            ],
+            "correct": [
+                ""
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-2": {
+            "question": "",
+            "answers": [
+                "",
+                "",
+                "",
+                ""
+            ],
+            "correct": [
+                ""
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-2": {
+            "question": "",
+            "answers": [
+                "",
+                "",
+                "",
+                ""
+            ],
+            "correct": [
+                ""
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-2": {
+            "question": "",
+            "answers": [
+                "",
+                "",
+                "",
+                ""
+            ],
+            "correct": [
+                ""
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-2": {
+            "question": "",
+            "answers": [
+                "",
+                "",
+                "",
+                ""
+            ],
+            "correct": [
+                ""
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-2": {
+            "question": "",
+            "answers": [
+                "",
+                "",
+                "",
+                ""
+            ],
+            "correct": [
+                ""
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-2": {
+            "question": "",
+            "answers": [
+                "",
+                "",
+                "",
+                ""
+            ],
+            "correct": [
+                ""
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-2": {
+            "question": "",
+            "answers": [
+                "",
+                "",
+                "",
+                ""
+            ],
+            "correct": [
+                ""
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-2": {
+            "question": "",
+            "answers": [
+                "",
+                "",
+                "",
+                ""
+            ],
+            "correct": [
+                ""
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-2": {
+            "question": "",
+            "answers": [
+                "",
+                "",
+                "",
+                ""
+            ],
+            "correct": [
+                ""
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-2": {
+            "question": "",
+            "answers": [
+                "",
+                "",
+                "",
+                ""
+            ],
+            "correct": [
+                ""
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-2": {
+            "question": "",
+            "answers": [
+                "",
+                "",
+                "",
+                ""
+            ],
+            "correct": [
+                ""
+            ],
+            "theme": "",
+            "keywords": [
+                ""
+            ],
+            "explanation": [
+                ""
+            ]
+        }
+    },
+    {
+        "question-2": {
+            "question": "",
+            "answers": [
+                "",
+                "",
+                "",
+                ""
+            ],
+            "correct": [
+                ""
+            ]
+        }
+    }
+]
