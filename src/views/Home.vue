@@ -2,7 +2,7 @@
   <div class="home">
     <ul class="question-box" v-for="question in questions" :key="question">
       <li v-for="name in question" :key="name">
-        <span class="question-id">{{ Object.keys(question) }}</span>
+        <span class="question-id">{{ Object.keys(question)[0] }}</span>
         <Question :question="name" />
       </li>
       <br />
@@ -35,5 +35,10 @@ export default {
 }
 .question-id{
   color: darkred;
+}
+li{
+  display: flex;
+  flex-direction: column;
+  gap: 10px
 }
 </style>

@@ -881,16 +881,18 @@
         }
     },
     {
-        "question-2": {
-            "question": "",
+        "question-42": {
+            "question": "You are training a spam classifier. You notice that you are overfitting the training data. Which three actions can you take to resolve this problem? (Choose three.)",
             "answers": [
-                "",
-                "",
-                "",
-                ""
+                "Get more training examples",
+                "Reduce the number of training examples",
+                "Use a smaller set of features",
+                "Use a larger set of features", 
+                "Increase the regularization parameters", 
+                "Decrease the regularization parameters"
             ],
             "correct": [
-                ""
+                "Get more training examples", "Use a smaller set of features", "Increase the regularization parameters"
             ],
             "theme": "",
             "keywords": [

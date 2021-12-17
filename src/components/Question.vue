@@ -1,7 +1,7 @@
 <template>
   <div class="question">
     <span class="question-text"> {{ question.question }}</span>
-    <span class="answer-list" v-for="answer in question.answers" :key="answer">
+    <span class="answer-list" v-for="answer in getAnswerList" :key="answer">
       <label :id="answer"
         ><input
           type="checkbox"
@@ -29,7 +29,15 @@ export default {
       hideExplain: true,
     };
   },
+  computed: {
+    getAnswerList() {
+      return this.randomizeAnswersOrder(this.question.answers);
+    },
+  },
   methods: {
+    randomizeAnswersOrder(array) {
+      return array.sort(() => (Math.random() > 0.5 ? 1 : -1));
+    },
     checkAnswer(correct) {
       for (let element in this.checkedAnswer) {
         if (!correct.includes(this.checkedAnswer[element])) {
@@ -71,12 +79,13 @@ button {
   width: 300px;
   height: 30px;
   border-radius: 10px;
-  &:hover{
+  &:hover {
     background: darken(white, 20%);
     cursor: pointer;
   }
 }
-label, input{
+label,
+input {
   cursor: pointer;
 }
 </style>
