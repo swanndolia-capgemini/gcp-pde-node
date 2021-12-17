@@ -1,7 +1,7 @@
 <template>
-  <div id="question">
-    {{ question.question }}<br /><br />
-    <span v-for="answer in question.answers" :key="answer">
+  <div class="question">
+    <span class="question-text"> {{ question.question }}</span>
+    <span class="answer-list" v-for="answer in question.answers" :key="answer">
       <label :id="answer"
         ><input
           type="checkbox"
@@ -10,9 +10,13 @@
           @change="check"
         />{{ answer }}</label
       >
-      <br />
     </span>
-    <p v-if="!hideExplain">Explanation: {{question.explanation}}</p>
+    <p v-if="!hideExplain">
+      Explanation:
+      <span v-for="explanation in question.explanation" :key="explanation">{{
+        explanation
+      }}</span>
+    </p>
     <button @click="checkAnswer(question.correct)">Valider</button>
   </div>
 </template>
@@ -50,3 +54,29 @@ export default {
 };
 </script>
 
+<style scoped lang="scss">
+.question-text {
+  white-space: pre-line;
+}
+.question {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.answer-list {
+  margin-left: 10px;
+}
+button {
+  align-self: flex-start;
+  width: 300px;
+  height: 30px;
+  border-radius: 10px;
+  &:hover{
+    background: darken(white, 20%);
+    cursor: pointer;
+  }
+}
+label, input{
+  cursor: pointer;
+}
+</style>

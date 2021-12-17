@@ -31,8 +31,7 @@ export default {
 .question-box {
   background: lightgray;
   border-radius: 20px;
-  margin: 15px;
-  padding: 30px;
+  padding:  10px 30px;
 }
 .question-id{
   color: darkred;
