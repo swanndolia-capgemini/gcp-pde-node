@@ -626,7 +626,7 @@
     },
     {
         "question-30": {
-            "question": "Your company's customer and order databases are often under heavy load. This makes performing analytics against them difficult without harming operations.\nThe databases are in a MySQL cluster, with nightly backups taken using mysqldump. You want to perform",
+            "question": "Your company's customer and order databases are often under heavy load. This makes performing analytics against them difficult without harming operations.\nThe databases are in a MySQL cluster, with nightly backups taken using mysqldump. You want to perform analytics with minimal impact on operations. What should you do?",
             "answers": [
                 "Add a node to the MySQL cluster and build an OLAP cube there.",
                 "Use an ETL tool to load the data from MySQL into Google BigQuery.",
@@ -1394,15 +1394,15 @@
     },
     {
         "question-66": {
-            "question": "",
+            "question": "Your neural network model is taking days to train. You want to increase the training speed. What can you do?",
             "answers": [
-                "",
-                "",
-                "",
-                ""
+                "Subsample your test dataset.",
+                "Subsample your training dataset.",
+                "Increase the number of input features to your model.",
+                "Increase the number of layers in your neural network."
             ],
             "correct": [
-                ""
+                "Subsample your training dataset."
             ],
             "theme": "",
             "keywords": [
@@ -1415,15 +1415,15 @@
     },
     {
         "question-67": {
-            "question": "",
+            "question": "You are responsible for writing your company's ETL pipelines to run on an Apache Hadoop cluster. The pipeline will require some checkpointing and splitting pipelines. Which method should you use to write the pipelines?",
             "answers": [
-                "",
-                "",
-                "",
-                ""
+                "PigLatin using Pig",
+                "HiveQL using Hive",
+                "Java using MapReduce",
+                "Python using MapReduce"
             ],
             "correct": [
-                ""
+                "PigLatin using Pig"
             ],
             "theme": "",
             "keywords": [
@@ -1436,15 +1436,15 @@
     },
     {
         "question-68": {
-            "question": "",
+            "question": "Your company maintains a hybrid deployment with GCP, where analytics are performed on your anonymized customer data. The data are imported to Cloud Storage from your data center through parallel uploads to a data transfer server running on GCP. Management informs you that the daily transfers take too long and have asked you to fix the problem. You want to maximize transfer speeds. Which action should you take?",
             "answers": [
-                "",
-                "",
-                "",
-                ""
+                "Increase the CPU size on your server.",
+                "Increase the size of the Google Persistent Disk on your server.",
+                "Increase your network bandwidth from your datacenter to GCP.",
+                "Increase your network bandwidth from Compute Engine to Cloud Storage."
             ],
             "correct": [
-                ""
+                "Increase your network bandwidth from your datacenter to GCP."
             ],
             "theme": "",
             "keywords": [
@@ -1457,15 +1457,15 @@
     },
     {
         "question-69": {
-            "question": "",
+            "question": "After migrating ETL jobs to run on BigQuery, you need to verify that the output of the migrated jobs is the same as the output of the original. You've loaded a table containing the output of the original job and want to compare the contents with output from the migrated job to show that they are identical. The tables do not contain a primary key column that would enable you to join them together for comparison.\nWhat should you do?",
             "answers": [
-                "",
-                "",
-                "",
-                ""
+                "Select random samples from the tables using the RAND() function and compare the samples.",
+                "Select random samples from the tables using the HASH() function and compare the samples.",
+                "Use a Dataproc cluster and the BigQuery Hadoop connector to read the data from each table and calculate a hash from non-timestamp columns of the table after sorting. Compare the hashes of each table.",
+                "Create stratified random samples using the OVER() function and compare equivalent samples from each table."
             ],
             "correct": [
-                ""
+                "Use a Dataproc cluster and the BigQuery Hadoop connector to read the data from each table and calculate a hash from non-timestamp columns of the table after sorting. Compare the hashes of each table."
             ],
             "theme": "",
             "keywords": [
@@ -1478,15 +1478,15 @@
     },
     {
         "question-70": {
-            "question": "",
+            "question": "You are a head of BI at a large enterprise company with multiple business units that each have different priorities and budgets. You use on-demand pricing for BigQuery with a quota of 2K concurrent on-demand slots per project. Users at your organization sometimes don't get slots to execute their query and you need to correct this. You'd like to avoid introducing new projects to your account.\nWhat should you do?",
             "answers": [
-                "",
-                "",
-                "",
-                ""
+                "Convert your batch BQ queries into interactive BQ queries.",
+                "Create an additional project to overcome the 2K on-demand per-project quota.",
+                "Switch to flat-rate pricing and establish a hierarchical priority model for your projects.",
+                "Increase the amount of concurrent slots per project at the Quotas page at the Cloud Console."
             ],
             "correct": [
-                ""
+                "Switch to flat-rate pricing and establish a hierarchical priority model for your projects."
             ],
             "theme": "",
             "keywords": [

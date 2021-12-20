@@ -3,7 +3,7 @@
     <ul class="question-box" v-for="question in questions" :key="question">
       <li v-for="name in question" :key="name">
         <span class="question-id">{{ Object.keys(question)[0] }}</span>
-        <Question :question="name" />
+        <Question :id="Object.keys(question)[0]" :question="name" />
       </li>
       <br />
     </ul>

@@ -2,7 +2,7 @@
   <div class="question">
     <span class="question-text"> {{ question.question }}</span>
     <span class="answer-list" v-for="answer in getAnswerList" :key="answer">
-      <label :id="answer"
+      <label :id="id + answer"
         ><input
           type="checkbox"
           :value="answer"
@@ -39,27 +39,32 @@ export default {
       return array.sort(() => (Math.random() > 0.5 ? 1 : -1));
     },
     checkAnswer(correct) {
-      if(this.checkedAnswer.length == correct.length){      for (let element in this.checkedAnswer) {
-        if (!correct.includes(this.checkedAnswer[element])) {
-          document.getElementById(this.checkedAnswer[element]).style.color =
-            "red";
-        } else {
-          document.getElementById(this.checkedAnswer[element]).style.color =
-            "green";
+      if (this.checkedAnswer.length == correct.length) {
+        for (let element in this.checkedAnswer) {
+          if (!correct.includes(this.checkedAnswer[element])) {
+            document.getElementById(
+              this.id + this.checkedAnswer[element]
+            ).style.color = "red";
+          } else {
+            document.getElementById(
+              this.id + this.checkedAnswer[element]
+            ).style.color = "green";
+          }
         }
-      }
-      for (let element in correct) {
-        if (!this.checkedAnswer.includes(correct[element])) {
-          document.getElementById(correct[element]).style.color = "green";
+        for (let element in correct) {
+          if (!this.checkedAnswer.includes(correct[element])) {
+            document.getElementById(this.id + correct[element]).style.color =
+              "green";
+          }
         }
-      }
-      this.hideExplain = false;}
-      else{
-        alert("Vous de vez sélectionner " + correct.length + " réponses")
+        this.hideExplain = false;
+      } else {
+        alert("Vous de vez sélectionner " + correct.length + " réponses");
       }
     },
   },
   props: {
+    id: String,
     question: Object,
   },
 };
