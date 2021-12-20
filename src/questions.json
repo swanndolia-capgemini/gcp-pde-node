@@ -380,7 +380,7 @@
             ],
             "correct": [
                 "Unsupervised learning to determine which transactions are most likely to be fraudulent.",
-                "Unsupervised learning to predict the location of a transaction.",
+                "Supervised learning to predict the location of a transaction.",
                 "Clustering to divide the transactions into N categories based on feature similarity."
             ],
             "theme": "",

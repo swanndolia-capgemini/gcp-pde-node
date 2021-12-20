@@ -31,14 +31,14 @@ export default {
 .question-box {
   background: lightgray;
   border-radius: 20px;
-  padding:  10px 30px;
+  padding: 10px 30px;
 }
-.question-id{
+.question-id {
   color: darkred;
 }
-li{
+li {
   display: flex;
   flex-direction: column;
-  gap: 10px
+  gap: 10px;
 }
 </style>
